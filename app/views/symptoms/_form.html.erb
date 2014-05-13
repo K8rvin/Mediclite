@@ -1,0 +1,31 @@
+<%= form_for @symptom do |f| %>
+  <% if @symptom.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@symptom.errors.count, "error") %> prohibited
+      this symptom from being saved:</h2>
+    <ul>
+    <% @symptom.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+    <%= f.label :Частьтела %><br>
+    <%= f.text_field :title1 %>
+  </p>
+
+  <p>
+    <%= f.label :Симптом %><br>
+    <%= f.text_field :title2 %>
+  </p>
+ 
+  <p>
+    <%= f.label :Лечение %><br>
+    <%= f.text_area :text, size: "60x12" %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

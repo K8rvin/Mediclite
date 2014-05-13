@@ -1,0 +1,17 @@
+<p>
+  <strong>:</strong>
+  <%= @symptom.title1 %>
+</p>
+
+<p>
+  <strong>:</strong>
+  <%= @symptom.title2 %>
+</p>
+ 
+<p>
+  <strong>:</strong>
+  <%= @symptom.text %>
+</p>
+
+<%= link_to 'Back', symptoms_path %>
+| <%= link_to 'Edit', edit_symptom_path(@symptom) %>

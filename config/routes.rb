@@ -1,32 +1,12 @@
 Medic::Application.routes.draw do
   get "welcome/index"
-  get "welcome/body"
-  get "welcome/head"
-  get "welcome/neck"
-  get "welcome/chest"
-  get "welcome/stomach"
-  get "welcome/legs"
-  get "welcome/loin"
+  get "symptoms/firsthelp"
+  get "symptoms/secondhelp"
+  get "symptoms/panacea"
 
-  get "welcome/whiskey"
-  get "welcome/nape"
-  get "welcome/eye"
-  get "welcome/cheekbone"
-  get "welcome/hearth"
-  get "welcome/spine1"
-  get "welcome/lungs"
-  get "welcome/muscle"
-  get "welcome/belly"
-  get "welcome/intestines"
-  get "welcome/liver"
-  get "welcome/cancer"
-  get "welcome/veins"
-  get "welcome/vessels"
-  get "welcome/joints"
-  get "welcome/arthrosis"
-  get "welcome/kidney"
-  get "welcome/spine2"
+  resources :symptoms
 
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

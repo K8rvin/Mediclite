@@ -1,0 +1,12 @@
+<h1>Выберите симптом</h1>
+
+<% @array1.each do |i| %>
+<%= link_to i[0], symptoms_panacea_path(i[1]) %>
+</br>
+</br>
+<% end %>
+</br>
+</br>
+</br>
+----------
+<p> <%= link_to "Назад", symptoms_firsthelp_path %> </p>
