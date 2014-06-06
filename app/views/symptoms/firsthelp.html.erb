@@ -1,18 +1,19 @@
+<%= render 'formhead' %>
+
 <h1>Выберите область болезни</h1>
 
-
-
-</br>
-...
 </br>
 
+</br>
+
+<h2>
 <% @array.transpose[0].uniq.each do |i| %>
 <%= link_to i, symptoms_secondhelp_path(@array.find_all{ |key, value| key == i }[0][-1]) %>
 </br>
-...
+
 </br>
 <% end %>
-
+</h2>
 
 </br>
 </br>
@@ -20,7 +21,7 @@
 
 
 
----------------------
+
 
 <p> <%= link_to "На главную", welcome_index_path %></p>
-
+<%= render 'formbottom' %>

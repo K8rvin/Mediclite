@@ -3,6 +3,8 @@ Medic::Application.routes.draw do
   get "symptoms/firsthelp"
   get "symptoms/secondhelp"
   get "symptoms/panacea"
+  get "symptoms/pass"
+  get "symptoms/author"
 
   resources :symptoms
 

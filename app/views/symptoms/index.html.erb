@@ -1,5 +1,6 @@
-<h1>Listing symptoms</h1>
-<%= link_to 'New symptom', new_symptom_path %>
+<%= render 'formhead' %>
+<h1>Список симптомов</h1>
+<%= link_to 'Новый симптом', new_symptom_path %>
 
 
 <table>
@@ -7,6 +8,7 @@
     <th>Область</th>
     <th>Симптом</th>
     <th>Лечение</th>
+    <th>ММН</th>
   </tr>
  
   <% @symptoms.each do |symptom| %>
@@ -14,12 +16,17 @@
       <td><%= symptom.title1 %></td>
       <td><%= symptom.title2 %></td>
       <td><%= symptom.text %></td>
-      <td><%= link_to 'Show', symptom_path(symptom) %></td>
-      <td><%= link_to 'Edit', edit_symptom_path(symptom) %></td>
-      <td><%= link_to 'Destroy', symptom_path(symptom),
+      <td><%= symptom.mmn %></td>
+      <td><%= link_to 'Показать', symptom_path(symptom) %></td>
+      <td><%= link_to 'Исправить', edit_symptom_path(symptom) %></td>
+      <td><%= link_to 'Удалить', symptom_path(symptom),
                     method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>
 
 <p> <%= link_to "На главную", welcome_index_path %></p>
+
+<p> Pass - <%=@b%></p>
+
+<%= render 'formbottom' %>

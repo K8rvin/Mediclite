@@ -1,3 +1,4 @@
+<%= render 'formhead' %>
 <p>
   <strong>:</strong>
   <%= @symptom.title1 %>
@@ -13,5 +14,12 @@
   <%= @symptom.text %>
 </p>
 
-<%= link_to 'Back', symptoms_path %>
-| <%= link_to 'Edit', edit_symptom_path(@symptom) %>
+<p>
+  <strong>:</strong>
+  <%= @symptom.mmn %>
+</p>
+
+<%= link_to 'Назад', symptoms_path %>
+| <%= link_to 'Исправить', edit_symptom_path(@symptom) %>
+
+<%= render 'formbottom' %>

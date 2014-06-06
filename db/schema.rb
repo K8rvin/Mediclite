@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140510184816) do
+ActiveRecord::Schema.define(version: 20140606094034) do
 
   create_table "symptoms", force: true do |t|
     t.string   "title1"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20140510184816) do
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "mmn"
+    t.string   "pass"
   end
 
 end

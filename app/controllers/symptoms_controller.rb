@@ -2,7 +2,25 @@
 class SymptomsController < ApplicationController
 
 def index
-	@symptoms = Symptom.all
+
+  
+  @i=0
+  @symptoms = Symptom.all
+
+  @symptoms.each do |symptom|
+    @i=@i+1
+  end
+
+  if @i==0
+      redirect_to new_symptom_path 
+  end
+
+  @symptom1 = Symptom.first
+  if @symptom1.pass != "123"
+      redirect_to welcome_index_path 
+  end
+  @b = @symptom1.pass
+
 end
 
 def firsthelp
@@ -35,6 +53,24 @@ def panacea
   @symptom = Symptom.find(params[:format].to_i)
 end
 
+def pass
+  @i=0
+  @symptoms = Symptom.all
+
+  @symptoms.each do |symptom|
+    @i=@i+1
+  end
+
+  if @i==0
+      redirect_to new_symptom_path 
+  end
+  @symptom = Symptom.first
+end
+
+def getpass
+  
+end
+
 
 def new
 	@symptom = Symptom.new
@@ -62,7 +98,7 @@ def update
   @symptom = Symptom.find(params[:id])
  
   if @symptom.update(symptom_params)
-    redirect_to @symptom
+    redirect_to symptoms_path
   else
     render 'edit'
   end
@@ -71,13 +107,24 @@ end
 def destroy
   @symptom = Symptom.find(params[:id])
   @symptom.destroy
- 
-  redirect_to symptoms_path
+
+  @i=0
+  @symptoms = Symptom.all
+
+  @symptoms.each do |symptom|
+    @i=@i+1
+  end
+
+  if @i==0
+      redirect_to welcome_index_path 
+  else   
+      redirect_to symptoms_path
+    end
 end
  
 private
   def symptom_params
-    params.require(:symptom).permit(:title1, :title2, :text, :ids)
+    params.require(:symptom).permit(:title1, :title2, :text, :mmn, :ids, :pass)
   end
 
 

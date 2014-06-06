@@ -3,7 +3,8 @@ class CreateSymptoms < ActiveRecord::Migration
     create_table :symptoms do |t|
       t.string :title1
       t.string :title2
-      t.text :text
+      t.text   :text
+      t.string :mmn
       
       t.timestamps
     end

@@ -1,0 +1,22 @@
+<%= render 'formhead' %>
+
+
+<h1>Введите пароль для доступа к базе данных</h1>
+
+<%= form_for @symptom do |f| %>
+  
+  <p>
+    <%= f.label :'пароль' %><br>
+    <%= f.text_field :pass %>
+  </p>
+ 
+  <p>
+    <%= f.button :'Сохранить' %>
+  </p>
+<% end %>
+
+
+</br>
+
+<%= link_to 'Вернуться', welcome_index_path %>
+<%= render 'formbottom' %>

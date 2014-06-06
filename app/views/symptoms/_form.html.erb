@@ -1,8 +1,7 @@
 <%= form_for @symptom do |f| %>
   <% if @symptom.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@symptom.errors.count, "error") %> prohibited
-      this symptom from being saved:</h2>
+    <h2><%= pluralize(@symptom.errors.count, "error") %> Невозможно сохранить симптом:</h2>
     <ul>
     <% @symptom.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
@@ -11,21 +10,26 @@
   </div>
   <% end %>
   <p>
-    <%= f.label :Частьтела %><br>
+    <%= f.label :'Часть тела' %><br>
     <%= f.text_field :title1 %>
   </p>
 
   <p>
-    <%= f.label :Симптом %><br>
+    <%= f.label :'Симптом' %><br>
     <%= f.text_field :title2 %>
   </p>
  
   <p>
-    <%= f.label :Лечение %><br>
+    <%= f.label :'Лечение' %><br>
     <%= f.text_area :text, size: "60x12" %>
+  </p>
+
+  <p>
+    <%= f.label :'ммн' %><br>
+    <%= f.text_field :mmn %>
   </p>
  
   <p>
-    <%= f.submit %>
+    <%= f.submit :'Сохранить' %>
   </p>
 <% end %>
